@@ -14,11 +14,6 @@ def menu():
         print('Invalid input')
         return 3
 
-# player loader
-def player_loader(gamers):
-    name = str(input('\nEnter player name: '))
-    gamers[name] = {'score': 0, 'hand': 0}
-
 # choice loader
 def pick_hand(gamers, player):
     hand = -1
@@ -65,7 +60,7 @@ def game():
         if c == 2:
             play = False
         elif c == 1:
-            player_loader(gamers)
+            gamers['you'] = {'score': 0, 'hand': 0}
             gamers['cpu'] = {'score': 0, 'hand': 0}
             players = list(gamers.keys())
             for player in players:
